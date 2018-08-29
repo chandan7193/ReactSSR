@@ -6,7 +6,7 @@ export default ()=>{
   const content = renderToString(<Home/>);
 
 
-  const html = `
+  return `
     <html>
       <head></head>
       <body>
