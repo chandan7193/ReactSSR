@@ -1,4 +1,4 @@
-
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -16,6 +16,11 @@ module.exports = {
     filename:'bundle.js',
     path:path.resolve(__dirname, 'build')
   },
+  plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('development')
+        })
+    ],
 
   // Tell webpack to run babel on every file its run through
 
