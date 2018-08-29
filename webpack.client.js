@@ -8,13 +8,13 @@ module.exports = {
 
   //Tell webpack the roo file of our
   //server application
-  entry: './src/index.js',
+  entry: './src/client/client.js',
 
   // Tell webpack where to put the output file
   //that is generated
   output:{
     filename:'bundle.js',
-    path:path.resolve(__dirname, 'build')
+    path:path.resolve(__dirname, 'public')
   },
 
   // Tell webpack to run babel on every file its run through
