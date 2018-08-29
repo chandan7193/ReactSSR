@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
 const path = require('path');
+const webpackNodeExternals = require('webpack-node-externals');
 
 const config= {
   // Inform webpack that we're building a bundle
@@ -22,7 +23,11 @@ const config= {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development')
         })
-    ]
+    ],
+
+    // webpackNodeExternals help you to ignore nodemodules get added into bundle.js
+  externals:[webpackNodeExternals()]
+
 }
 
 module.exports = merge(baseConfig, config);
